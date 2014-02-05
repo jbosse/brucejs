@@ -6,29 +6,17 @@
     <link rel="stylesheet" href="todos.css">
   </head>
   <body>
-    <div class="container">
-      <div class="row" data-model="TodoViewModel">
+    <div class="container" data-cloak data-model="TodoViewModel">
+      <div class="row">
         <div class="col-md-12">
-          <h1 data-cloak data-bind="text: title"></h1>
-          <ul data-cloak data-bind="foreach: todos">
+          <h1 data-bind="text: title"></h1>
+          <ul data-bind="foreach: todos">
             <li data-bind="attr: { 'id': 'todo_'+id }">
               <input type="checkbox" data-bind="checked: complete"/>
               <input type="type" data-bind="value: description" placeholder="New todo..."/>
             </li>
           </ul>
-          <button data-cloak data-bind="click: addTodo">Add Todo</button>
-        </div>
-      </div>
-      <div class="row" data-model="TodoViewModel">
-        <div class="col-md-12">
-          <h1 data-cloak data-bind="text: title"></h1>
-          <ul data-cloak data-bind="foreach: todos">
-            <li data-bind="attr: { 'id': 'todo_'+id }">
-              <input type="checkbox" data-bind="checked: complete"/>
-              <input type="type" data-bind="value: description" placeholder="New todo..."/>
-            </li>
-          </ul>
-          <button data-cloak data-bind="click: addTodo">Add Todo</button>
+          <button data-bind="click: addTodo">Add Todo</button>
         </div>
       </div>
     </div>

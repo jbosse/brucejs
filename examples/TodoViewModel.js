@@ -5,4 +5,4 @@ bruce.register('TodoViewModel',function(TodoService, TodoFactory){
   self.addTodo = function(){
     self.todos.push(TodoFactory.create({Id:0, Complete: false, Description: ''}));
   };
-},['TodoService', 'TodoFactory'],false);
+},['TodoService', 'TodoFactory']);
