@@ -4,12 +4,13 @@ var Bruce = function(){
   var locator = {};
   var dependencies = {};
   var resolved = {};
-  self.register = function(name, ctor, inject){
+  self.register = function(name, ctor, inject, singleton){
     locator[name] = ctor;
+    locator[name].singleton = (typeof(singleton)==='undefined')?true:singleton;
     dependencies[name] = inject;
   };
   self.resolve = function(name){
-    if(resolved[name]){
+    if(resolved[name]&&locator[name].singleton){
       return resolved[name];
     }
     if(locator[name]){
