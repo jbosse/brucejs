@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="040cc956-d29a-4358-aaf0-acc5a59eac49" name="Default" comment="" />
+    <list default="true" id="040cc956-d29a-4358-aaf0-acc5a59eac49" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
+    </list>
     <ignored path="brucejs.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="readme.md" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="readme.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+            <state line="28" column="109" selection-start="1009" selection-end="1009" vertical-scroll-proportion="0.8095238" vertical-offset="0" max-vertical-offset="588">
               <folding />
             </state>
           </provider>
@@ -59,10 +61,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Todo.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Todo.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/Todo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="17" selection-start="700" selection-end="700" vertical-scroll-proportion="0.3950178" vertical-offset="50" max-vertical-offset="612">
+            <state line="16" column="17" selection-start="700" selection-end="700" vertical-scroll-proportion="-8.538462" vertical-offset="50" max-vertical-offset="612">
               <folding />
             </state>
           </provider>
@@ -102,10 +104,12 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/src/bruce.js" />
         <option value="$PROJECT_DIR$/examples/TodoFactory.js" />
         <option value="$PROJECT_DIR$/examples/TodoService.js" />
@@ -113,6 +117,7 @@
         <option value="$PROJECT_DIR$/src/bruce-ko.js" />
         <option value="$PROJECT_DIR$/examples/todos.css" />
         <option value="$PROJECT_DIR$/examples/Todo.html" />
+        <option value="$PROJECT_DIR$/readme.md" />
       </list>
     </option>
   </component>
@@ -322,13 +327,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bruce.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="27" selection-start="901" selection-end="901" vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="663">
@@ -373,7 +371,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/Todo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="17" selection-start="700" selection-end="700" vertical-scroll-proportion="0.3950178" vertical-offset="50" max-vertical-offset="612">
+        <state line="16" column="17" selection-start="700" selection-end="700" vertical-scroll-proportion="-8.538462" vertical-offset="50" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="109" selection-start="1009" selection-end="1009" vertical-scroll-proportion="0.8095238" vertical-offset="0" max-vertical-offset="588">
           <folding />
         </state>
       </provider>
