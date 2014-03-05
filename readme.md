@@ -46,7 +46,7 @@ You can add configuration code to execute on document ready. For example to use 
     }, ['Logger']);
 ````  
 
-**Special Regisrations**  
+**Special Registrations**  
 There are a few pre-registered objects that you can inject as dependencies  
  -  *Window*: A think wrapper around window that currently supports ```Window.redirect(url);```  
  -  *Logger*: A small wrapper around console.log ```Logger.log(message);```  
