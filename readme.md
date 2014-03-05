@@ -34,4 +34,19 @@ In order to use dependency injection:
         self.items = MyService.doWork();
     },['MyService']);
 ```
+
+*Configuration*
+You can add configuration code to execute on document ready. For example to use ko.validation extenders you would add a config:
+```
+    bruce.config('MyConfig', function (Logger) {
+      ko.validation.configure({ registerExtenders: true, messagesOnModified: true, insertMessages: false });
+    }, ['Logger']);
+````
+
+*Special Regisrations*
+There are a few pre-registered objects that you can inject as dependencies
+- Window: A think wrapper around window that currently supports ```Window.redirect(url);```
+- Logger: A small wrapper around console.log ```Logger.log(message);```
+- Http: A wrapper for jQuery ajax methods. Currently only supports ```Http.post(url, data)``` and returns the underlying jQuery promise.
+
 Note that the MyService dependency should be added also as a string in an array after the constructor method.
