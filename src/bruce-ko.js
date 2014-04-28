@@ -1,7 +1,7 @@
-(function($, ko, bruce, undefined){
-  $(function(){
+(function ($, ko, bruce, undefined) {
+  $(function () {
     var bound = $('[data-model]');
-    for(var index = 0, count = bound.length; index < count; index++){
+    for (var index = 0, count = bound.length; index < count; index++) {
       var $element = $(bound[index]);
       var modelName = $element.attr('data-model');
       var model = bruce.resolve(modelName);
