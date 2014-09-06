@@ -48,8 +48,8 @@ You can add configuration code to execute on document ready. For example to use 
 
 **Special Registrations**  
 There are a few pre-registered objects that you can inject as dependencies  
- -  *Window*: A think wrapper around window that currently supports ```Window.redirect(url);```  
- -  *Logger*: A small wrapper around console.log ```Logger.log(message);```  
- -  *Http*: A wrapper for jQuery ajax methods. Currently only supports ```Http.post(url, data)``` and returns the underlying jQuery promise.  
+ -  *Window*: A wrapper around window that currently supports ```Window.redirect(url);```  
+ -  *Logger*: A wrapper around console.log ```Logger.log(message);```  
+ -  *Http*: A wrapper for jQuery ajax methods. Currently only supports ```Http.post(url, data)``` and returns the underlying jQuery promise.(requires jQuery)  
 
 Note that the MyService dependency should be added also as a string in an array after the constructor method.
