@@ -1,4 +1,5 @@
-///<reference path="~/Scripts/brucejs/bruce.js"/>
+﻿///<reference path="~/Scripts/brucejs/bruce.js"/>
+///javascriptlint
 
 (function (bruce, undefined) {
   var Promise = bruce.resolve("Promise");
@@ -9,7 +10,7 @@
   };
   var http = {};
   http.getPromise = new Promise();
-  http. getCalls = [];
+  http.getCalls = [];
   http.postPromise = new Promise();
   http.postCalls = [];
   http.get = function (url, data) {
@@ -26,23 +27,37 @@
     });
     return http.postPromise;
   };
-  http.reset = function () {
+  http.reset = function() {
     http.getPromise = new Promise();
     http.postPromise = new Promise();
     http.getCalls = [];
     http.postCalls = [];
-  }
+  };
   bruce.tdd = {
     MockService: MockService
   };
   bruce.erase('Http');
   bruce.inject('Http', http);
 
+  var logger = {};
+  logger.logged = [];
+  logger.log = function(message) {
+    logger.logged.push(message);
+  };
+  logger.reset = function() {
+    logger.logged = [];
+  };
+  bruce.erase('Logger');
+  bruce.inject('Logger', logger);
+
   var Window = {
     redirects: []
   };
   Window.redirect = function(url) {
     Window.redirects.push(url);
+  };
+  Window.reset = function() {
+    Window.redirects = [];
   };
   bruce.erase('Window');
   bruce.inject('Window', Window);

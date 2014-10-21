@@ -1,4 +1,4 @@
-/// javascriptlint
+﻿/// javascriptlint
 (function (window, $, undefined) {
   var Promise = function() {
     var self = this,
@@ -8,33 +8,41 @@
       fail = [],
       always = [];
 
-    function fire(events, data) {
+    function fire(events, data1, data2, data3) {
       for (var index = 0, count = events.length; index < count; index++) {
-        events[index](data);
+        events[index](data1, data2, data3);
       }
     }
 
-    self.resolve = function(data) {
-      fire(done, data);
+    self.resolve = function (data1, data2, data3) {
+      fire(done, data1, data2, data3);
       fire(always);
-      isResolved = data;
+      isResolved = {
+        data1: data1,
+        data2: data2,
+        data3: data3
+      };
     };
-    self.reject = function(message) {
-      fire(fail, message);
+    self.reject = function (data1, data2, data3) {
+      fire(fail, data1, data2, data3);
       fire(always);
-      isRejected = message;
+      isRejected = {
+        data1: data1,
+        data2: data2,
+        data3: data3
+      };
     };
     self.done = function(callback) {
       done.push(callback);
       if (typeof isResolved !== 'undefined') {
-        callback(isResolved);
+        callback(isResolved.data1, isResolved.data2, isResolved.data3);
       }
       return self;
     };
-    self.fail = function(callback) {
+    self.fail = function (callback) {
       fail.push(callback);
       if (typeof isRejected !== 'undefined') {
-        callback(isRejected);
+        callback(isRejected.data1, isRejected.data2, isRejected.data3);
       }
       return self;
     };
@@ -203,3 +211,60 @@
   };
   window.bruce = new Bruce();
 })(window, jQuery);
+
+
+(function (bruce, undefined) {
+  bruce.make = function (typeName, argArray) {
+    var args = [null].concat(argArray),
+      ctor = bruce.resolve(typeName);
+    function F() {
+      return ctor.apply(this, args);
+    }
+    F.prototype = ctor.prototype;
+    return new F();
+  };
+
+  function wrapCallback(callback, button, index) {
+    if (typeof callback !== "undefined" && callback !== null) {
+      return function() {
+        callback(button, index);
+        $(this).dialog("close");
+      };
+    }
+    return function () {
+      $(this).dialog("close");
+    };
+  }
+
+  function buildButtons(view) {
+    var buttons = {};
+    for (var i = 0, c = view.buttons.length; i < c; i++) {
+      var button = view.buttons[i];
+      buttons[button.title] = wrapCallback(button.callback);
+    }
+    return buttons;
+  }
+
+  var AlertView = function (title, message) {
+    this.title = title;
+    this.message = message;
+    this.buttons = [];
+  };
+
+  AlertView.prototype.addButton = function (buttonTitle, callback) {
+    this.buttons.push({
+      title: buttonTitle,
+      callback: callback
+    });
+  };
+
+  AlertView.prototype.show = function () {
+    var settings = {
+      title: this.title,
+      buttons: buildButtons(this)
+    };
+    $().bruceConfirm(this.message, null, settings, null);
+  };
+
+  bruce.inject("AlertView", AlertView, [], false);
+})(window.bruce);
