@@ -51,5 +51,12 @@ There are a few pre-registered objects that you can inject as dependencies
  -  *Window*: A wrapper around window that currently supports ```Window.redirect(url);```  
  -  *Logger*: A wrapper around console.log ```Logger.log(message);```  
  -  *Http*: A wrapper for jQuery ajax methods. Currently only supports ```Http.post(url, data)``` and returns the underlying jQuery promise.(requires jQuery)  
+ -  *Promise*: A standard promise pattern object.  
 
 Note that the MyService dependency should be added also as a string in an array after the constructor method.
+
+## Bruce-tdd.js ##
+This is a helper library to aid with unit testing by hijacking Window, Logger, and Http with some simple mocks. More documentation is needed in this readme but the src is fairly easy to understand.
+
+## Bruce-qunit.js ##
+This is an experimental library for users of qunit. It is a thin wrapper around modules and tests to help with a more BDD style of tests. A sample set of tests can be found in the examples, but again better documentation is needed.
