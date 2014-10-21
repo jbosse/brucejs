@@ -1,8 +1,4 @@
-﻿///<reference path="~/Scripts/QUnit/qunit.js"/>
-///<reference path="~/Scripts/brucejs/bruce.js"/>
-///javascriptlint
-
-(function (bruce) {
+﻿(function (bruce, $) {
   bruce.context = function(contextName, contextFunction) {
     var context;
     document.title = contextName + " Tests";
@@ -21,17 +17,6 @@
           return new context.origDate(today);
         }
         return new context.origDate(parseDate);
-      };
-    };
-    context.given.there_is_an_alert = function() {
-      if (!Fortigent) {
-        Fortigent = {};
-      }
-      if (!Fortigent.UItweaks) {
-        Fortigent.UItweaks = {};
-      }
-      Fortigent.UItweaks.bruceAlert = function(message) {
-        context.bruceAlertMessage = message;
       };
     };
     context.given.the_sut_was_in_the_state = function(stateSetup) {
@@ -67,4 +52,4 @@
       };
     };
   };
-})(window.bruce);
+})(window.bruce, jQuery);

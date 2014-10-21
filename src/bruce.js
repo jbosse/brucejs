@@ -1,5 +1,4 @@
-﻿/// javascriptlint
-(function (window, $, undefined) {
+﻿(function (window, $, undefined) {
   var Promise = function() {
     var self = this,
       isResolved,

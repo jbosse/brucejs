@@ -1,7 +1,4 @@
-﻿///<reference path="~/Scripts/brucejs/bruce.js"/>
-///javascriptlint
-
-(function (bruce, undefined) {
+﻿(function (bruce, undefined) {
   var Promise = bruce.resolve("Promise");
   var MockService = function(name, callback) {
     var self = this;
