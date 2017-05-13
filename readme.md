@@ -60,4 +60,3 @@ This is a helper library to aid with unit testing by hijacking Window, Logger, a
 
 ## Bruce-qunit.js ##
 This is an experimental library for users of qunit. It is a thin wrapper around modules and tests to help with a more BDD style of tests. A sample set of tests can be found in the examples, but again better documentation is needed.
-ending
